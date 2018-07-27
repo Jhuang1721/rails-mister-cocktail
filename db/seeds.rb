@@ -9,6 +9,10 @@
 require 'json'
 require 'open-uri'
 
+Dose.delete_all
+Ingredient.delete_all
+Cocktail.delete_all
+
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredients = open(url).read
 ingredients = JSON.parse(ingredients)
