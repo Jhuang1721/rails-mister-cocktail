@@ -1,8 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= asset_url "cool_bar.jpeg" %>');">
+<div class="banner" style="background-image: url('<%= asset_url "Drinking.jpeg" %>');">
   <div class="banner-content">
-    <h1>The Hub</h1>
-    <p>A Deep Dove Into Shanghai's Secret Mixes</p>
-    <a class="btn btn-primary btn-lg">Start now</a>
   </div>
 </div>
 <br>
@@ -10,12 +7,21 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <p><%= cocktail.name %></p>
+        <div id="cocktail-<%= cocktail.id %>" class="hover card">
+          <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cocktail.photo.nil? ? (cl_image_path cocktail.photo) : (image_path "camping.jpg") %>');">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <p><%= cocktail.name %></p>
+              <p>Very cool city, the best</p>
+            </div>
+          </div>
+          <div class="back" style="background-color: #FFFFFF;">
             <a><%= link_to 'Show', cocktail %></a>
-            <p>Very cool city, the best</p>
+            <ul class="doses">
+              <% cocktail.doses.each do |dose| %>
+                <li><%= dose.description %> <%= dose.ingredient.name %></li>
+              <% end %>
+            </ul>
           </div>
         </div>
         <br>
