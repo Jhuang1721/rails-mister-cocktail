@@ -1,0 +1,15 @@
+<h1 class="text-center"> Post recipe for <%= @cocktail.name %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description do %>
+          <%= f.select :description_amount, collection: @amount %>
+          <%= f.select :description_unit, collection: @size %>
+        <% end %>
+        <%= f.input :ingredient_id, collection: @ingredients %>
+        <%= f.submit "Post Recipe", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
