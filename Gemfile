@@ -32,6 +32,7 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
+gem 'dotenv-rails', groups: [:development, :test]
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -60,4 +61,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
-
