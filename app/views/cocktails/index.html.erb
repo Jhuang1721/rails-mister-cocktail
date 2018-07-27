@@ -13,8 +13,8 @@
             <div class="card-description">
             </div>
           </div>
-          <div class="back" style="background-color: #FFFFFF;">
-            <a><%= link_to 'Show', cocktail %></a>
+          <div class="back" style="background-color: #FFFFFF; color: black;">
+            <a><%= link_to 'How to Make', cocktail %></a>
             <ul class="doses">
               <% cocktail.doses.each do |dose| %>
                 <li><%= dose.description %> <%= dose.ingredient.name %></li>
@@ -28,4 +28,3 @@
   </div>
 </div>
 <br>
-<%= link_to 'New Cocktail', new_cocktail_path %>
